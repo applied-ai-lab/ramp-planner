@@ -18,16 +18,16 @@
 
 import os
 import copy
-from beam_domain_coarse import generate_coarse_beam_domain
-from beam_domain_fine import generate_fine_beam_domain
-from example_domains.example_latest import generate_domain_setup
+from .beam_domain_coarse import generate_coarse_beam_domain
+from .beam_domain_fine import generate_fine_beam_domain
+from .example_domains.example_latest import generate_domain_setup
 # from example_domains.example_latest import generate_domain_setup
 import logging
 import asyncio
-from al_structures import ActionInstance, GoalDefinition
-from planning import plan
-from sparc_io import extract_states_from_answer_set
-from zooming import remove_chars_from_last_number, zoom
+from .al_structures import ActionInstance, GoalDefinition
+from .planning import plan
+from .sparc_io import extract_states_from_answer_set
+from .zooming import remove_chars_from_last_number, zoom
 import re
 import time
 

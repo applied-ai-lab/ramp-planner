@@ -41,7 +41,7 @@ Python distutils
 2. Download this Repo and configure
    - Clone this repo
      ```bash
-     git clone https://github.com/M-A-Robson/MTC_ORI_Collab.git
+     git clone git@github.com:applied-ai-lab/ramp-planner.git
      ```
    - Set PLANNER_PATH environment variable
      ```bash
@@ -49,7 +49,7 @@ Python distutils
      ```
    - Change to repo base directory
      ```bash
-     cd MTC_ORI_Collab
+     cd ramp-planner
      ```
    - Install python dependencies
      ```bash
@@ -65,6 +65,6 @@ Python distutils
 
 1. Run example planner with
    ```bash
-   cd MTC_ORI_Collab
-   python3 sparc_planning/src/main.py
+   cd ramp-planner
+   python3 -m sparc_planning.src.main
    ```
