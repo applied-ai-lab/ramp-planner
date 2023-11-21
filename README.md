@@ -1,7 +1,7 @@
 # RAMP Benchmark Planner 2023
 
 A collaboration between the Manufacturing Technology Centre and Oxford Robotics Institute.
-For more information please see the project website: https://sites.google.com/oxfordrobotics.institute/ramp
+For more information please see the [RAMP benchmark](https://sites.google.com/oxfordrobotics.institute/ramp).
 
 ## Planning Module for the RAMP Assembly Benchmark
 
