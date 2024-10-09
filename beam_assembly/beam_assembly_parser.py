@@ -517,6 +517,7 @@ class BeamAssembly:
         to the base beam (as 4x4 affine transform) also updates all beam.origin positions.
         Provides no guarantee on length connectness for joint positions on angled beams.
         """
+        self.joint_dictionary = {}
         logging.info('Updating beam positions...')
         # reset all beams to origin pose by default
         for beam in self.beams:
@@ -571,6 +572,7 @@ class BeamAssembly:
                     connecting_beam.rotate(x)
                     # translate to match new hole position
                     connecting_beam.translate(q[:3,3])
+                    self.joint_dictionary[conn] = q[:3, 3]
                     logging.debug('target connection positon:', q[:3,3])
                     #connecting_beam.transform(np.matmul(np.linalg.inv(p),q))
                     # record that we already moved this beam
