@@ -95,7 +95,7 @@ MODEL_DATA = {
     ElementType.IN_F: "models/in-f.stl",
     ElementType.THRU_F: "models/thru.stl",
     ElementType.IN_F_END: "models/in-f-end.stl",
-    ElementType.LINK: None,
+    ElementType.LINK: "models/20x20x200.stl",
     ElementType.ANGLE_M_END: "models/in-m-end.stl",
 }
 
@@ -159,7 +159,13 @@ class BeamComponent:
 
     def load_model(self) -> trimesh.Trimesh:
         if self.is_link():
-            m = trimesh.creation.box((0.02,0.02,self.length/1000.0)) # units in meters
+            # m = trimesh.creation.box((0.02,0.02,self.length/1000.0)) # units in meters
+            scale_mat = np.eye(4)
+            scale_mat[2, 2] = self.length / 100.0  # scale z direction to self.length in meters
+            m = trimesh.load_mesh(MODEL_DATA[self.type]).apply_transform(scale_mat)
+            t = np.eye(4)
+            t[2,3]=-m.bounds[1,2]/2.0
+            m.apply_transform(t)
         else:
             #scale to meters
             scale_mat = np.eye(4)#*0.001
